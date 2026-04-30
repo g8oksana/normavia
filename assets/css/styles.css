@@ -341,3 +341,106 @@ p { margin: 0 0 var(--space-4); }
   .hero--split .hero__inner { grid-template-columns: 1fr; }
   .hero--split .hero__image { order: -1; max-height: 280px; }
 }
+
+/* ---------- CARDS ---------- */
+.card {
+  background: var(--color-bg-light-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+  display: flex; flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+.card__icon {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 182, 212, 0.08);
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+.card__icon svg { width: 24px; height: 24px; }
+.card h3 { font-size: 18px; margin-bottom: var(--space-2); }
+.card p { color: var(--color-text-muted); font-size: 15px; flex-grow: 1; margin-bottom: var(--space-4); }
+.card__link { font-weight: 600; font-size: 14px; }
+
+/* On dark sections */
+.section--dark .card {
+  background: var(--color-surface);
+  border-color: var(--color-border-dark);
+}
+.section--dark .card h3 { color: var(--color-text-light); }
+.section--dark .card p { color: var(--color-text-muted-on-dark); }
+.section--dark .card:hover { border-color: var(--color-accent); }
+
+/* Pillar (icon-led variant — no border, used in 3-col value-prop) */
+.pillar { text-align: left; }
+.pillar__icon {
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 182, 212, 0.10);
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+.pillar__icon svg { width: 28px; height: 28px; }
+.pillar h3 { font-size: 20px; margin-bottom: var(--space-2); }
+.pillar p { color: var(--color-text-muted); font-size: 16px; }
+
+/* ---------- BREADCRUMB ---------- */
+.breadcrumb {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  padding: var(--space-4) 0;
+  background: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+.breadcrumb ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.breadcrumb li::after { content: "/"; margin-left: var(--space-2); color: var(--color-border-light); }
+.breadcrumb li:last-child::after { content: ""; }
+.breadcrumb a { color: var(--color-text-muted); }
+.breadcrumb a:hover { color: var(--color-accent); text-decoration: none; }
+.breadcrumb [aria-current="page"] { color: var(--color-text-dark); font-weight: 600; }
+
+/* ---------- ALTERNATING IMAGE+TEXT ROW ---------- */
+.split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+.split-row + .split-row { margin-top: var(--space-16); }
+.split-row__image img {
+  width: 100%; height: auto; aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+.split-row--reverse .split-row__image { order: 2; }
+@media (max-width: 800px) {
+  .split-row { grid-template-columns: 1fr; gap: var(--space-6); }
+  .split-row--reverse .split-row__image { order: 0; }
+}
+
+/* List with cyan check bullets */
+.check-list { list-style: none; padding: 0; }
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-dark);
+}
+.check-list li::before {
+  content: "";
+  position: absolute; left: 0; top: 7px;
+  width: 16px; height: 16px;
+  background: var(--color-accent);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='white' d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='white' d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/></svg>") center/contain no-repeat;
+}
+.section--dark .check-list li { color: var(--color-text-light); }
