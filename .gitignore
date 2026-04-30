@@ -1,0 +1,11 @@
+# Brainstorming workspace (mockups + visual companion state)
+.superpowers/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
