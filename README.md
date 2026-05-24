@@ -8,7 +8,7 @@ and cybersecurity compliance consultancy.
 - `index.html` — homepage
 - `about.html` — about page
 - `contact.html` — contact page
-- `services/*.html` — six service detail pages
+- `services/*.html` — service detail pages
 - `assets/css/styles.css` — all styles
 - `assets/js/main.js` — all interactive behavior
 - `assets/img/` — image assets
