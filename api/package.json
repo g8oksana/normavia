@@ -1,0 +1,12 @@
+{
+  "name": "normavia-contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Azure Functions contact form API for Norma Via Group.",
+  "scripts": {
+    "start": "func start"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

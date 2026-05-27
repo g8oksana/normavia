@@ -1,4 +1,4 @@
-# Normavia Group Marketing Website — Design Spec
+# Norma Via Group Marketing Website — Design Spec
 
 **Date:** 2026-04-30
 **Author:** vladgon (with Claude)
@@ -9,12 +9,12 @@
 
 ## 1. Overview
 
-A static, multi-page marketing/brochure website for **Normavia Group**, a
+A static, multi-page marketing/brochure website for **Norma Via Group**, a
 Seattle-based ISO certification and cybersecurity compliance consultancy
-founded in 2025. The site mirrors the structural conventions of
+launched in 2025 as the next chapter of QExcellence, founded in 2018. The site mirrors the structural conventions of
 `fyconsulting.com` (rich landing page + dedicated service subpages) and reuses
 text material and imagery from `q-excel.com` (the founder's prior site)
-adapted to the Normavia Group brand.
+adapted to the Norma Via Group brand.
 
 The site is built as plain static HTML/CSS/JS — no build tooling, no
 framework. Any modern web host (or a literal folder share) can serve it.
@@ -33,8 +33,8 @@ framework. Any modern web host (or a literal folder share) can serve it.
 - No client portal or member-only area.
 - No CMS — content edits happen in HTML.
 - No backend or form-processing service in v1 — `mailto:` submission only.
-- No client testimonials or partner logos in v1 (none exist yet to display
-  honestly).
+- No partner logos in v1.
+- Homepage testimonials use short excerpts from Oksana Goncharov's LinkedIn recommendations.
 
 ---
 
@@ -42,24 +42,24 @@ framework. Any modern web host (or a literal folder share) can serve it.
 
 | Field | Value |
 |---|---|
-| Company name | Normavia Group |
-| Founded | 2025 |
+| Company name | Norma Via Group |
+| Founded | Norma Via Group launched in 2025; formerly QExcellence, founded in 2018 |
 | Location | Seattle, WA, USA |
-| Email | info@normaviagroup.com |
-| Phone | 425-000-0000 (placeholder, to be replaced) |
-| LinkedIn | https://www.linkedin.com/company/qexcellence/ (placeholder — Normavia URL TBD) |
-| Facebook | https://www.facebook.com/QExcellence-103945661194339 (placeholder) |
-| Instagram | https://www.instagram.com/_qexcellence_/ (placeholder) |
+| Email | oksana@norma-via.com |
+| Phone | +1 (425) 381-0191 |
+| LinkedIn | https://www.linkedin.com/company/normaviagroup/ |
+| Facebook | Removed |
+| Instagram | Removed |
 | Founder | Oksana Goncharov, Lead Consultant — 20 years quality/manufacturing, 300+ audits, 22 countries |
 
 **Hero headline (locked):**
-> From gap analysis to certificate — without the guesswork.
+> From gap analysis to certificate – without the guesswork.
 
 **Hero sub:**
 > We guide quality and cybersecurity teams through ISO, CMMC, AS9100, and
-> more. End-to-end, on time, on the first audit.
+> more. End-to-end, on time, on the first audit — with compliance that supports business growth.
 
-**Primary CTA label:** "Get a consultation"
+**Primary CTA label:** "Start Your Audit-Ready Plan Today"
 
 ---
 
@@ -99,7 +99,7 @@ framework. Any modern web host (or a literal folder share) can serve it.
 - `>=1024px` — desktop
 - `>=1280px` — wide desktop
 
-**Logo:** Inline SVG wordmark "NORMAVIA" with a small geometric mark
+**Logo:** Inline SVG wordmark "NORMA VIA" with a small geometric mark
 (stylized "N" or check mark) in cyan. No raster image. Placed in header
 (top-left) and footer.
 
@@ -147,6 +147,8 @@ D:\source\qexcellence-site\
 │       ├── safety_first.jpg
 │       ├── mfg_check.jpg
 │       ├── assembly.jpg
+│       ├── factory-industry-ai.jpg
+│       ├── lock-encryption-ai.jpg
 │       └── pcb_repair.jpg
 ├── robots.txt
 ├── sitemap.xml
@@ -162,12 +164,12 @@ D:\source\qexcellence-site\
 
 | # | Section | Layout | Content / image |
 |---|---|---|---|
-| 1 | Hero | Full-width, dark slate gradient, no photo | Headline + sub + primary CTA "Get a consultation" + secondary "View services" |
+| 1 | Hero | Full-width, dark slate gradient, no photo | Headline + sub + primary CTA "Start Your Audit-Ready Plan Today" + secondary "View services" |
 | 2 | Three-pillar value prop | 3-column grid with SVG icons | (a) Audit-ready systems  (b) Quality + cybersecurity in one partner  (c) Decades of field experience |
-| 3 | Two-domain split | 2-column alternating image+text | Left: manufacturers/quality teams + ISO 9001 / AS9100 / ISO 13485 bullets + image `assembly.jpg`. Right: cybersecurity / regulated industries + CMMC / ISO 27001 bullets + image `pcb_repair.jpg` |
+| 3 | Two-domain split | 2-column alternating image+text | Left: manufacturers/quality teams + ISO 9001 / AS9100 / ISO 13485 bullets + image `factory-industry-ai.jpg`. Right: cybersecurity / regulated industries + CMMC / ISO 27001 bullets + image `lock-encryption-ai.jpg` |
 | 4 | Service grid (6 cards) | 3×2 grid | One card per service. Icon + title + 1-line + "Learn more →" linking to subpage |
 | 5 | 4-step roadmap | Horizontal numbered diagram | 1) Gap analysis  2) Implementation & documentation  3) Internal audit & CAPA  4) Certification audit support |
-| 6 | Why Normavia (credibility) | Alternating image+text | Reframes founder stats as company capability ("Our lead consultant has..."). Image `founder.jpg` as portrait card with caption "Lead Consultant" |
+| 6 | Why Norma Via (credibility) | Alternating image+text | Reframes founder stats as company capability ("Our lead consultant has..."). Image `founder.jpg` as portrait card with caption "Lead Consultant" |
 | 7 | FAQ | Accordion, 6 questions | Cert duration / ISO 9001 vs AS9100 / remote consulting / initial + surveillance / CMMC Level 2 / pricing model |
 | 8 | Final CTA + form | Dark band, centered form | Name, email, company, service dropdown, message → mailto submission |
 | 9 | Footer | 4-column | Brand+tagline / Services links / Company links (About, Contact) / Seattle address + phone + email + social icons |
@@ -181,7 +183,7 @@ All 6 service pages share this structure:
 | # | Section | Notes |
 |---|---|---|
 | 1 | Breadcrumb | Home / Services / [Service]. Emits `BreadcrumbList` JSON-LD |
-| 2 | Service hero | H1 = primary keyword. Sub = 1-sentence value prop. Hero image right. CTA "Get a consultation" |
+| 2 | Service hero | H1 = primary keyword. Sub = 1-sentence value prop. Hero image right. CTA "Start Your Audit-Ready Plan Today" |
 | 3 | What it is | 2-col text. Plain-English explanation of the standard, who it applies to, what certification means |
 | 4 | Who needs this | Bullet list. Industries / company sizes / regulatory drivers |
 | 5 | Our approach (4 steps) | Numbered grid. Reuses homepage 4-step pattern, scoped to this service |
@@ -198,8 +200,8 @@ Each service page emits a `Service` JSON-LD with `name`, `provider`,
 ## 7. About page
 
 1. Breadcrumb
-2. Hero — "About Normavia Group" + image `happy.jpg`
-3. Our story — 2-3 paragraphs framing Normavia as a Seattle quality+cyber consultancy founded in 2025, building on decades of audit experience
+2. Hero — "About Norma Via Group" + image `happy.jpg`
+3. Our story — 2-3 paragraphs framing Norma Via as a Seattle quality+cyber consultancy launched in 2025 as the next chapter of QExcellence, founded in 2018
 4. Mission/values — 3-pillar grid (integrity / expertise / partnership)
 5. Leadership — small section with `founder.jpg` + caption (Lead Consultant — 20yrs / 300+ audits / 22 countries)
 6. CTA band → contact.html
@@ -217,13 +219,12 @@ Each service page emits a `Service` JSON-LD with `name`, `provider`,
    - Email (required, validated)
    - Company
    - Phone (optional)
-   - Service dropdown — 6 services + "Not sure yet"
    - Message (required, textarea)
-   - Submit → `mailto:info@normaviagroup.com` with formatted body
+   - Submit → Azure contact API, which sends email through Microsoft Graph
 5. Footer
 
-Client-side JS displays a "Thanks — your message is being prepared in your
-mail client" confirmation after submit.
+Client-side JS displays a "Thanks — your message was sent" confirmation after
+the Azure contact API accepts the request.
 
 ---
 
@@ -231,7 +232,7 @@ mail client" confirmation after submit.
 
 ### Per-page meta (every page)
 
-- Unique `<title>`: `[Page-specific keyword] | Normavia Group`
+- Unique `<title>`: `[Page-specific keyword] | Norma Via Group`
 - Unique `<meta name="description">` 150-160 chars, primary keyword + Seattle geo signal
 - `<link rel="canonical">` → page's clean URL
 - `<meta name="robots" content="index,follow">`
@@ -244,7 +245,7 @@ mail client" confirmation after submit.
 - **Organization** schema — site-wide in `<head>`. Includes `name`,
   `url`, `logo`, `address`, `contactPoint`, `sameAs` (LinkedIn, Facebook,
   Instagram).
-- **LocalBusiness** subtype `ProfessionalService` — Seattle, founded 2025.
+- **LocalBusiness** subtype `ProfessionalService` — Seattle, launched in 2025; formerly QExcellence, founded in 2018.
 - **Service** schema on each service subpage.
 - **BreadcrumbList** on every subpage.
 
@@ -278,8 +279,8 @@ mail client" confirmation after submit.
 | AS9100 | AS9100 aerospace quality certification |
 | GMP/ISO 13485 | ISO 13485 medical device consulting |
 | Internal Auditing | internal audit ISO consulting |
-| About | Normavia Group quality cybersecurity consulting |
-| Contact | contact Normavia Group Seattle |
+| About | Norma Via Group quality cybersecurity consulting |
+| Contact | contact Norma Via Group Seattle |
 
 ### Analytics
 
@@ -290,14 +291,19 @@ ready for GA4 / Plausible / Microsoft Clarity. No tag added in v1.
 
 ## 10. Image inventory & mapping
 
-All images sourced from q-excel.com, copied locally into `assets/img/`.
+Original images were sourced from q-excel.com; homepage manufacturing and cybersecurity section images were replaced with Pixabay assets copied locally into `assets/img/`.
 **Not used:** `QExcelLogo.png` (q-excel branding).
+
+Content photos and illustrations use a shared image treatment in CSS: subtle desaturation/contrast plus a navy-to-teal overlay on hero and split-section image containers. Logos are excluded so brand marks stay crisp.
 
 | File | Alt text (drafted) | Used on |
 |---|---|---|
-| `assembly.jpg` | "Manufacturing assembly line worker inspecting product" | Homepage §3 left |
-| `pcb_repair.jpg` | "Technician repairing a printed circuit board" | Homepage §3 right; CMMC service page hero |
-| `founder.jpg` | "Lead Consultant Oksana Goncharov" | Homepage §6; About page leadership |
+| `factory-industry-ai.jpg` | "Assembly line employees using technology in a manufacturing environment" | Homepage §3 left |
+| `lock-encryption-ai.jpg` | "AI-generated lock and encryption cybersecurity illustration" | Homepage §3 right |
+| `assembly.jpg` | "Manufacturing assembly line worker inspecting product" | ISO 14001 service page hero |
+| `pcb_repair.jpg` | "Technician repairing a printed circuit board" | CMMC service page hero |
+| `oksana.webp` | "Lead Consultant Oksana Goncharov" | Homepage §6 |
+| `founder.jpg` | "Lead Consultant Oksana Goncharov" | About page leadership |
 | `manuf.jpg` | "Manufacturing facility floor" | ISO 9001 service page hero |
 | `mfg_check.jpg` | "Quality inspector checking manufactured parts" | AS9100 service page hero |
 | `safety_first.jpg` | "Safety-first signage in a manufacturing environment" | GMP/ISO 13485 service page hero |
@@ -316,7 +322,7 @@ Single `assets/js/main.js`, vanilla JS, no dependencies. Functions:
 
 - Mobile nav toggle (hamburger menu open/close)
 - FAQ accordion (one open at a time)
-- Contact form: client-side validation, build `mailto:` link, show success state
+- Contact form: client-side validation, POST to `/api/contact`, show success/error state
 - Optional: smooth-scroll for in-page anchor links
 
 JS is `<script defer>` loaded — never blocks render.
@@ -340,9 +346,8 @@ No CSS framework, no preprocessor, no build step.
 
 ## 13. Out of scope (for v1, can be added later)
 
-- Backend form handler (Formspree, Azure Function, etc.)
 - CMS / headless content authoring
-- Real client testimonials, partner logos
+- Partner logos
 - Blog / news / case studies
 - Multi-language / i18n
 - Cookie banner (no tracking → not required)
@@ -376,8 +381,8 @@ The implemented site must:
 
 ## 15. Open items / future decisions
 
-- Real Normavia Group LinkedIn / Facebook / Instagram URLs (currently placeholder)
-- Real Normavia Group phone number (currently `425-000-0000`)
+- Real Norma Via Group LinkedIn / Facebook / Instagram URLs (currently placeholder)
+- Real Norma Via Group phone number: `+1 (425) 381-0191`
 - Custom logo design (currently a typographic placeholder wordmark)
 - Production hosting decision — likely candidates: Azure Static Web Apps, GitHub Pages, Netlify
 - Form backend decision (when moving off `mailto:`)

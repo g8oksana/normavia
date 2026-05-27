@@ -1,8 +1,8 @@
-# Normavia Group Website Implementation Plan
+# Norma Via Group Website Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a 9-page static marketing website for Normavia Group — a Seattle-based ISO certification + cybersecurity consultancy — with SEO baked in, modern slate+cyan visual style, and zero build tooling.
+**Goal:** Build a 9-page static marketing website for Norma Via Group — a Seattle-based ISO certification + cybersecurity consultancy — with SEO baked in, modern slate+cyan visual style, and zero build tooling.
 
 **Architecture:** Plain static HTML + one shared CSS file + one shared JS file. No framework. No bundler. No CMS. Each page is a self-contained `.html` file that can be opened directly in a browser. JSON-LD structured data inlined per page. Single-page-per-service approach with a shared template structure.
 
@@ -34,9 +34,12 @@ D:\source\qexcellence-site\
 │       ├── card.jpg
 │       ├── manuf.jpg
 │       ├── founder.jpg
+│       ├── oksana.webp
 │       ├── safety_first.jpg
 │       ├── mfg_check.jpg
 │       ├── assembly.jpg
+│       ├── factory-industry-ai.jpg
+│       ├── lock-encryption-ai.jpg
 │       └── pcb_repair.jpg
 ├── robots.txt
 ├── sitemap.xml
@@ -147,9 +150,9 @@ git commit -m "chore: add reference imagery sourced from q-excel.com"
 - [ ] **Step 1: Write README.md**
 
 ```markdown
-# Normavia Group Website
+# Norma Via Group Website
 
-Static marketing site for Normavia Group — Seattle-based ISO certification
+Static marketing site for Norma Via Group — Seattle-based ISO certification
 and cybersecurity compliance consultancy.
 
 ## Structure
@@ -180,9 +183,9 @@ Then open <http://localhost:8000>.
 
 ## Hosting
 
-Deploy the entire repo as static files to any host (Azure Static Web Apps,
-GitHub Pages, Netlify, Vercel, S3+CloudFront, etc.). No environment
-variables, no backend.
+Deploy with Azure Static Web Apps so the static site and `api/` folder are
+hosted together. Configure Microsoft Graph mail settings in Azure app settings,
+not in source control.
 
 ## Editing content
 
@@ -192,8 +195,8 @@ section headings.
 
 ## Known placeholders (replace before launch)
 
-- Phone number: `425-000-0000`
-- Social URLs: currently QExcellence accounts (LinkedIn, Facebook, Instagram)
+- Phone number: `+1 (425) 381-0191`
+- LinkedIn: `https://www.linkedin.com/company/normaviagroup/`
 - Logo: typographic SVG wordmark in header — replace with branded asset when ready
 ```
 
@@ -216,11 +219,11 @@ This is the wordmark used in every page header and footer. We define it as a sin
 - [ ] **Step 1: Write `assets/img/logo.svg`**
 
 ```xml
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 36" role="img" aria-label="Normavia Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 36" role="img" aria-label="Norma Via Group">
   <g fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 28 L4 8 L20 28 L20 8" />
   </g>
-  <text x="30" y="24" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#0f172a" letter-spacing="0.04em">NORMAVIA</text>
+  <text x="30" y="24" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#0f172a" letter-spacing="0.04em">NORMA VIA</text>
   <text x="30" y="34" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="500" fill="#64748b" letter-spacing="0.18em">GROUP</text>
 </svg>
 ```
@@ -232,24 +235,24 @@ The footer sits on dark slate, so wordmark text needs to be light. We create a s
 Append `assets/img/logo-dark-bg.svg`:
 
 ```xml
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 36" role="img" aria-label="Normavia Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 36" role="img" aria-label="Norma Via Group">
   <g fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 28 L4 8 L20 28 L20 8" />
   </g>
-  <text x="30" y="24" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#f1f5f9" letter-spacing="0.04em">NORMAVIA</text>
+  <text x="30" y="24" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#f1f5f9" letter-spacing="0.04em">NORMA VIA</text>
   <text x="30" y="34" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="500" fill="#94a3b8" letter-spacing="0.18em">GROUP</text>
 </svg>
 ```
 
 - [ ] **Step 3: Verify**
 
-Open both `.svg` files in a browser. Expected: see "NORMAVIA / GROUP" wordmark with a cyan stylized "N" mark to the left.
+Open both `.svg` files in a browser. Expected: see "NORMA VIA / GROUP" wordmark with a cyan stylized "N" mark to the left.
 
 - [ ] **Step 4: Commit**
 
 ```bash
 git add assets/img/logo.svg assets/img/logo-dark-bg.svg
-git commit -m "feat: add Normavia Group SVG logo (light + dark variants)"
+git commit -m "feat: add Norma Via Group SVG logo (light + dark variants)"
 ```
 
 ---
@@ -392,7 +395,7 @@ Create a temporary `_smoke.html` at the project root with the following, then op
 <meta charset="utf-8"><title>Smoke</title>
 <link rel="stylesheet" href="assets/css/styles.css">
 </head><body>
-<h1>Hello Normavia</h1>
+<h1>Hello Norma Via</h1>
 <p class="lede">Tokens loaded if this is dark slate text on light background and Inter-fallback.</p>
 <a href="#">A test link should be cyan</a>
 </body></html>
@@ -1129,7 +1132,7 @@ git commit -m "feat(css): add roadmap, FAQ accordion, CTA band, form, and contac
         return;
       }
 
-      var to = "info@normaviagroup.com";
+      var to = "oksana@norma-via.com";
       var subject = "Consultation request from " + name.value.trim();
       var bodyLines = [
         "Name: " + name.value.trim(),
@@ -1200,7 +1203,7 @@ Replace `{{TITLE}}`, `{{DESCRIPTION}}`, `{{CANONICAL}}`, `{{OG_IMAGE_RELATIVE_PA
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Normavia Group">
+<meta property="og:site_name" content="Norma Via Group">
 <meta property="og:title" content="{{TITLE}}">
 <meta property="og:description" content="{{DESCRIPTION}}">
 <meta property="og:image" content="https://www.normaviagroup.com/{{OG_IMAGE_RELATIVE_PATH}}">
@@ -1231,13 +1234,14 @@ Replace `{{TITLE}}`, `{{DESCRIPTION}}`, `{{CANONICAL}}`, `{{OG_IMAGE_RELATIVE_PA
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Normavia Group",
+  "name": "Norma Via Group",
+  "alternateName": "QExcellence",
   "description": "ISO certification and cybersecurity compliance consulting for quality and regulated industries.",
-  "url": "https://www.normaviagroup.com/",
-  "logo": "https://www.normaviagroup.com/assets/img/logo.svg",
-  "image": "https://www.normaviagroup.com/assets/img/manuf.jpg",
-  "telephone": "+1-425-000-0000",
-  "email": "info@normaviagroup.com",
+  "url": "https://www.norma-via.com/",
+  "logo": "https://www.norma-via.com/assets/img/logo.svg",
+  "image": "https://www.norma-via.com/assets/img/manuf.jpg",
+  "telephone": "+1-425-381-0191",
+  "email": "oksana@norma-via.com",
   "foundingDate": "2025",
   "address": {
     "@type": "PostalAddress",
@@ -1269,8 +1273,8 @@ Replace `{{ROOT}}` per the rule above.
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-header__logo" href="{{ROOT}}index.html" aria-label="Normavia Group home">
-      <img src="{{ROOT}}assets/img/logo.svg" alt="Normavia Group" width="180" height="32">
+    <a class="site-header__logo" href="{{ROOT}}index.html" aria-label="Norma Via Group home">
+      <img src="{{ROOT}}assets/img/logo.svg" alt="Norma Via Group" width="180" height="32">
     </a>
     <button class="site-nav__toggle" type="button" aria-controls="site-nav" aria-expanded="false">
       <span class="site-nav__toggle-icon" aria-hidden="true"></span>
@@ -1280,7 +1284,7 @@ Replace `{{ROOT}}` per the rule above.
       <a href="{{ROOT}}index.html#services">Services</a>
       <a href="{{ROOT}}about.html">About</a>
       <a href="{{ROOT}}contact.html">Contact</a>
-      <a class="btn btn--primary" href="{{ROOT}}contact.html">Get a consultation</a>
+      <a class="btn btn--primary" href="{{ROOT}}contact.html">Start Your Audit-Ready Plan Today</a>
     </nav>
   </div>
 </header>
@@ -1293,7 +1297,7 @@ Replace `{{ROOT}}` per the rule above.
   <div class="container">
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <img src="{{ROOT}}assets/img/logo-dark-bg.svg" alt="Normavia Group" width="180" height="32">
+        <img src="{{ROOT}}assets/img/logo-dark-bg.svg" alt="Norma Via Group" width="180" height="32">
         <p>ISO certification and cybersecurity compliance consulting. Seattle, WA &mdash; serving the United States.</p>
       </div>
       <div>
@@ -1317,7 +1321,7 @@ Replace `{{ROOT}}` per the rule above.
       <div class="site-footer__contact">
         <h4>Contact</h4>
         <p>Seattle, WA, USA</p>
-        <p><a href="mailto:info@normaviagroup.com">info@normaviagroup.com</a></p>
+        <p><a href="mailto:oksana@norma-via.com">oksana@norma-via.com</a></p>
         <p><a href="tel:+14250000000">+1 (425) 000-0000</a></p>
         <div class="site-footer__social" aria-label="Social profiles">
           <a href="https://www.linkedin.com/company/qexcellence/" aria-label="LinkedIn" rel="noopener" target="_blank">
@@ -1333,8 +1337,8 @@ Replace `{{ROOT}}` per the rule above.
       </div>
     </div>
     <div class="site-footer__bottom">
-      <p>&copy; 2026 Normavia Group. All rights reserved.</p>
-      <p>Seattle, WA &middot; info@normaviagroup.com</p>
+      <p>&copy; 2026 Norma Via Group. All rights reserved.</p>
+      <p>Seattle, WA &middot; oksana@norma-via.com</p>
     </div>
   </div>
 </footer>
@@ -1352,7 +1356,7 @@ These three snippets — **SNIPPET-HEAD**, **SNIPPET-HEADER**, **SNIPPET-FOOTER*
 - [ ] **Step 1: Create `index.html` with `<head>`, header, hero, and pillar grid**
 
 Use SNIPPET-HEAD with:
-- `{{TITLE}}` = `ISO Certification Consulting in Seattle | Normavia Group`
+- `{{TITLE}}` = `ISO Certification Consulting in Seattle | Norma Via Group`
 - `{{DESCRIPTION}}` = `Seattle-based ISO and cybersecurity certification consultancy. ISO 9001, CMMC, ISO 27001, AS9100, ISO 13485 — from gap analysis to certificate.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/manuf.jpg`
@@ -1370,11 +1374,11 @@ Use SNIPPET-HEADER with `{{ROOT}}=""`.
 <!-- HERO -->
 <section class="hero">
   <div class="container hero__inner">
-    <span class="eyebrow" style="color: #5eead4;">Normavia Group</span>
-    <h1>From gap analysis to certificate &mdash; without the guesswork.</h1>
-    <p class="lede">We guide quality and cybersecurity teams through ISO, CMMC, AS9100, and more. End-to-end, on time, on the first audit.</p>
+    <span class="eyebrow" style="color: #5eead4;">Norma Via Group</span>
+    <h1>From gap analysis to certificate &ndash; without the guesswork.</h1>
+    <p class="lede">We guide quality, environmental, safety, and cybersecurity teams through ISO, CMMC, and more. End-to-end, on time, on the first audit &mdash; with compliance that supports business growth.</p>
     <div class="hero__ctas">
-      <a class="btn btn--primary btn-arrow" href="contact.html">Get a consultation</a>
+      <a class="btn btn--primary btn-arrow" href="contact.html">Start Your Audit-Ready Plan Today</a>
       <a class="btn btn--ghost" href="#services">View our services</a>
     </div>
   </div>
@@ -1436,13 +1440,13 @@ Append to `index.html` (still inside `<main>`):
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>Two domains. One team.</h2>
+      <h2>A clearer, faster path to compliance.</h2>
       <p>Whether you make products or process data, we cover the standards your customers ask about.</p>
     </div>
 
     <div class="split-row">
       <div class="split-row__image">
-        <img src="assets/img/assembly.jpg" alt="Manufacturing assembly line worker inspecting product" loading="lazy">
+        <img src="assets/img/factory-industry-ai.jpg" alt="Assembly line employees using technology in a manufacturing environment" loading="lazy">
       </div>
       <div>
         <span class="eyebrow">Quality &amp; manufacturing</span>
@@ -1458,7 +1462,7 @@ Append to `index.html` (still inside `<main>`):
 
     <div class="split-row split-row--reverse">
       <div class="split-row__image">
-        <img src="assets/img/pcb_repair.jpg" alt="Technician working on a printed circuit board" loading="lazy">
+        <img src="assets/img/lock-encryption-ai.jpg" alt="AI-generated lock and encryption cybersecurity illustration" loading="lazy">
       </div>
       <div>
         <span class="eyebrow">Cybersecurity &amp; regulated industries</span>
@@ -1527,7 +1531,7 @@ Append to `index.html` (still inside `<main>`):
 
 ---
 
-### Task 14: `index.html` — roadmap + Why Normavia + FAQ
+### Task 14: `index.html` — roadmap + Why Norma Via + FAQ
 
 **Files:**
 - Modify: `index.html` (append)
@@ -1567,20 +1571,22 @@ Append to `index.html` (still inside `<main>`):
   </div>
 </section>
 
-<!-- WHY NORMAVIA -->
+<!-- WHY NORMA VIA -->
 <section class="section">
   <div class="container">
     <div class="split-row">
       <div>
-        <span class="eyebrow">Why Normavia</span>
+        <span class="eyebrow">Why Norma Via</span>
         <h2>Led by experts who have done this 300+ times.</h2>
         <p class="lede">Our lead consultant has conducted more than 300 audits across 22 countries and 150+ manufacturers, with deep certifications in quality and operations.</p>
-        <p>Normavia Group is a young firm built on long experience. We&rsquo;ve sat on both sides of the audit table &mdash; as consultants helping companies certify, and as auditors evaluating their systems. That dual perspective is why our clients pass audits the first time.</p>
+        <p>Norma Via Group is a young firm built on long experience. We bring a triple perspective to every engagement &mdash; manufacturer, auditor, and consultant &mdash; so clients know what to build, what auditors expect, and how to pass with confidence.</p>
         <a class="btn btn--primary btn-arrow" href="about.html">More about our team</a>
       </div>
-      <div class="split-row__image">
+      <div class="split-row__image split-row__image--portrait">
         <figure>
-          <img src="assets/img/founder.jpg" alt="Oksana Goncharov, Lead Consultant at Normavia Group">
+          <span class="image-tone-frame">
+            <img src="assets/img/oksana.webp" alt="Oksana Goncharov, Lead Consultant at Norma Via Group">
+          </span>
           <figcaption style="font-size: 13px; color: var(--color-text-muted); margin-top: 8px;">Oksana Goncharov &mdash; Lead Consultant. 20 years in quality and manufacturing.</figcaption>
         </figure>
       </div>
@@ -1689,9 +1695,9 @@ Append to `index.html`:
         <span class="form__error">Please add a short message.</span>
       </div>
       <div>
-        <button class="btn btn--primary btn-arrow" type="submit">Request a consultation</button>
+        <button class="btn btn--primary btn-arrow" type="submit">Start Your Audit-Ready Plan Today</button>
       </div>
-      <div class="form__success" role="status">Thanks &mdash; your message is being prepared in your mail client. If nothing opens, email us at <a href="mailto:info@normaviagroup.com">info@normaviagroup.com</a>.</div>
+      <div class="form__success" role="status">Thanks &mdash; your message is being prepared in your mail client. If nothing opens, email us at <a href="mailto:oksana@norma-via.com">oksana@norma-via.com</a>.</div>
     </form>
   </div>
 </section>
@@ -1739,7 +1745,7 @@ This is the **prototype service page** — the others copy this structure with c
 - [ ] **Step 1: Create `services/iso-9001.html`**
 
 Use SNIPPET-HEAD with:
-- `{{TITLE}}` = `ISO 9001 Certification Consulting | Normavia Group`
+- `{{TITLE}}` = `ISO 9001 Certification Consulting | Norma Via Group`
 - `{{DESCRIPTION}}` = `Plan, build, and pass your ISO 9001 quality management system audit. Seattle-based consultancy with 300+ audits of experience.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/iso-9001.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/manuf.jpg`
@@ -1753,7 +1759,7 @@ In the `<head>`, after the Organization JSON-LD, add per-page schemas:
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "ISO 9001 Certification Consulting",
-  "provider": { "@type": "ProfessionalService", "name": "Normavia Group", "url": "https://www.normaviagroup.com/" },
+  "provider": { "@type": "ProfessionalService", "name": "Norma Via Group", "url": "https://www.normaviagroup.com/" },
   "areaServed": "United States",
   "serviceType": "ISO 9001 Quality Management System certification consulting",
   "description": "End-to-end ISO 9001 certification: gap analysis, system implementation, internal audit, and certification audit support."
@@ -1794,7 +1800,7 @@ After SNIPPET-HEADER (`{{ROOT}}="../"`), the body of the page:
       <span class="eyebrow" style="color: #5eead4;">Service</span>
       <h1>ISO 9001 Certification Consulting</h1>
       <p class="lede">Build a quality management system that runs your business and passes your audit &mdash; on the first try.</p>
-      <a class="btn btn--primary btn-arrow" href="../contact.html">Get a consultation</a>
+      <a class="btn btn--primary btn-arrow" href="../contact.html">Start Your Audit-Ready Plan Today</a>
     </div>
     <div class="hero__image">
       <img src="../assets/img/manuf.jpg" alt="Manufacturing facility floor with operators at quality stations">
@@ -1880,7 +1886,7 @@ After SNIPPET-HEADER (`{{ROOT}}="../"`), the body of the page:
   <div class="container">
     <h2>Ready to start your ISO 9001 certification?</h2>
     <p>The first conversation is always free. We&rsquo;ll scope the work, give you a realistic timeline, and tell you whether we&rsquo;re the right fit.</p>
-    <a class="btn btn--primary btn-arrow" href="../contact.html">Get a consultation</a>
+    <a class="btn btn--primary btn-arrow" href="../contact.html">Start Your Audit-Ready Plan Today</a>
   </div>
 </section>
 
@@ -1918,7 +1924,7 @@ git commit -m "feat(services): build ISO 9001 service page (the template prototy
 Same overall structure as `iso-9001.html` (Task 16). Substitute the page-specific content below; keep all section markup (`hero hero--split`, `breadcrumb`, `roadmap`, `cta-band`, etc.) verbatim.
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `CMMC and NIST 800-171 Compliance Consulting | Normavia Group`
+- `{{TITLE}}` = `CMMC and NIST 800-171 Compliance Consulting | Norma Via Group`
 - `{{DESCRIPTION}}` = `CMMC Level 1, Level 2, and NIST 800-171 readiness for DoD contractors and the defense industrial base. Seattle-based, nationwide service.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/cmmc-nist-800-171.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/pcb_repair.jpg`
@@ -1931,7 +1937,7 @@ Same overall structure as `iso-9001.html` (Task 16). Substitute the page-specifi
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "CMMC and NIST 800-171 Compliance Consulting",
-  "provider": { "@type": "ProfessionalService", "name": "Normavia Group", "url": "https://www.normaviagroup.com/" },
+  "provider": { "@type": "ProfessionalService", "name": "Norma Via Group", "url": "https://www.normaviagroup.com/" },
   "areaServed": "United States",
   "serviceType": "CMMC and NIST 800-171 cybersecurity compliance consulting",
   "description": "CMMC Level 1 / Level 2 readiness, SSP and POA&M development, internal assessments, and C3PAO assessment support for DoD contractors."
@@ -1948,7 +1954,7 @@ BreadcrumbList: position 3 name = `CMMC / NIST 800-171`, item URL ends with `/se
       <span class="eyebrow" style="color: #5eead4;">Service</span>
       <h1>CMMC &amp; NIST 800-171 Compliance Consulting</h1>
       <p class="lede">DoD contracts demand cybersecurity proof. We get you assessment-ready &mdash; and keep you there.</p>
-      <a class="btn btn--primary btn-arrow" href="../contact.html">Get a consultation</a>
+      <a class="btn btn--primary btn-arrow" href="../contact.html">Start Your Audit-Ready Plan Today</a>
     </div>
     <div class="hero__image">
       <img src="../assets/img/pcb_repair.jpg" alt="Technician working on a circuit board in a controlled environment">
@@ -2015,7 +2021,7 @@ git commit -m "feat(services): build CMMC / NIST 800-171 service page"
 Same template as Task 16, **but the hero image is replaced by a CSS pattern** because we have no q-excel photo that fits cybersecurity.
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `ISO 27001 Implementation Consultant | Normavia Group`
+- `{{TITLE}}` = `ISO 27001 Implementation Consultant | Norma Via Group`
 - `{{DESCRIPTION}}` = `ISO 27001 information security management system implementation and certification. SaaS, B2B, and regulated industries. Seattle-based.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/iso-27001.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/pcb_repair.jpg` *(reused for OG only — page itself uses no photo)*
@@ -2028,7 +2034,7 @@ Same template as Task 16, **but the hero image is replaced by a CSS pattern** be
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "ISO 27001 Implementation Consultant",
-  "provider": { "@type": "ProfessionalService", "name": "Normavia Group", "url": "https://www.normaviagroup.com/" },
+  "provider": { "@type": "ProfessionalService", "name": "Norma Via Group", "url": "https://www.normaviagroup.com/" },
   "areaServed": "United States",
   "serviceType": "ISO 27001 information security management system consulting",
   "description": "ISO 27001 ISMS scoping, risk assessment, Statement of Applicability, control implementation, internal audit, and certification audit support."
@@ -2046,7 +2052,7 @@ BreadcrumbList 3rd item: `ISO 27001`.
       <span class="eyebrow" style="color: #5eead4;">Service</span>
       <h1>ISO 27001 Implementation Consulting</h1>
       <p class="lede">A risk-based information-security management system that holds up to enterprise customer audits and certification.</p>
-      <a class="btn btn--primary btn-arrow" href="../contact.html">Get a consultation</a>
+      <a class="btn btn--primary btn-arrow" href="../contact.html">Start Your Audit-Ready Plan Today</a>
     </div>
     <div class="hero__pattern" aria-hidden="true">
       <svg viewBox="0 0 64 64" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -2114,7 +2120,7 @@ git commit -m "feat(services): build ISO 27001 service page (CSS pattern hero, n
 - Create: `services/as9100.html`
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `AS9100 Aerospace Quality Certification | Normavia Group`
+- `{{TITLE}}` = `AS9100 Aerospace Quality Certification | Norma Via Group`
 - `{{DESCRIPTION}}` = `AS9100 Rev D consulting for aerospace suppliers. Build a quality system that primes accept and your auditor approves. Seattle-based.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/as9100.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/mfg_check.jpg`
@@ -2180,7 +2186,7 @@ git commit -m "feat(services): build AS9100 aerospace quality service page"
 - Create: `services/gmp-iso-13485.html`
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `ISO 13485 Medical Device Quality Consulting | Normavia Group`
+- `{{TITLE}}` = `ISO 13485 Medical Device Quality Consulting | Norma Via Group`
 - `{{DESCRIPTION}}` = `ISO 13485 and FDA GMP consulting for medical-device manufacturers. From design controls to post-market surveillance. Seattle-based.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/gmp-iso-13485.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/safety_first.jpg`
@@ -2244,7 +2250,7 @@ git commit -m "feat(services): build GMP / ISO 13485 medical device service page
 - Create: `services/internal-auditing.html`
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `Internal Audit Consulting for ISO Management Systems | Normavia Group`
+- `{{TITLE}}` = `Internal Audit Consulting for ISO Management Systems | Norma Via Group`
 - `{{DESCRIPTION}}` = `Outsourced internal auditors for ISO 9001, ISO 27001, AS9100, and ISO 13485. Keep your management system audit-ready year-round.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/internal-auditing.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/card.jpg`
@@ -2308,8 +2314,8 @@ git commit -m "feat(services): build Internal Auditing service page"
 - Create: `about.html`
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `About Normavia Group | Quality &amp; Cybersecurity Consulting`
-- `{{DESCRIPTION}}` = `Normavia Group is a Seattle-based ISO and cybersecurity certification consultancy founded in 2025, building on decades of audit experience.`
+- `{{TITLE}}` = `About Norma Via Group | Quality &amp; Cybersecurity Consulting`
+- `{{DESCRIPTION}}` = `Norma Via Group is a Seattle-based ISO and cybersecurity certification consultancy launched in 2025, formerly QExcellence, founded in 2018.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/about.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/happy.jpg`
 - `{{ROOT}}` = `` (empty)
@@ -2346,27 +2352,43 @@ After SNIPPET-HEAD + SNIPPET-HEADER (`{{ROOT}}=""`):
   <div class="container hero__inner">
     <div>
       <span class="eyebrow" style="color: #5eead4;">About</span>
-      <h1>A young firm. Long experience.</h1>
-      <p class="lede">Normavia Group is a Seattle-based quality and cybersecurity certification consultancy. We were founded in 2025 to bring decades of audit experience to companies pursuing ISO and cybersecurity certifications.</p>
+      <h1>Compliance guidance built for business momentum.</h1>
+      <p class="lede">Norma Via Group helps quality, environmental, safety, and cybersecurity teams get audit-ready faster &mdash; with practical guidance that supports certification, customer trust, and growth.</p>
     </div>
     <div class="hero__image">
-      <img src="assets/img/happy.jpg" alt="Normavia Group team member at the Seattle office">
+      <img src="assets/img/happy.jpg" alt="Norma Via Group team member at the Seattle office">
     </div>
   </div>
 </section>
 
-<!-- OUR STORY -->
+<!-- WHY NORMA VIA -->
 <section class="section">
   <div class="container">
     <div class="grid grid--2" style="gap: 64px;">
       <div>
-        <span class="eyebrow">Our story</span>
-        <h2>Built on the audit table</h2>
+        <span class="eyebrow">Why Norma Via</span>
+        <h2>Experienced guidance without the guesswork.</h2>
       </div>
       <div>
-        <p>Normavia Group was founded in 2025 by experienced auditors and consultants who had spent twenty years inside quality and security programs &mdash; sometimes running them, sometimes auditing them, often building them from scratch.</p>
-        <p>The premise is simple: companies pursuing ISO 9001, ISO 27001, AS9100, ISO 13485, and CMMC don&rsquo;t need another consultancy that hands them a binder. They need a partner who has been on both sides of the audit and knows what passes and what doesn&rsquo;t.</p>
+        <p>The premise is simple: companies pursuing ISO 9001, ISO 14001, ISO 45001, ISO 27001, ISO 42001, ISO 20000-1, ISO 13485, and CMMC don&rsquo;t need another consultancy that hands them a binder. They need a partner who understands compliance from three angles: manufacturer, auditor, and consultant.</p>
+        <p>We help teams prioritize what matters, close gaps efficiently, and prepare for certification with clear deliverables, realistic timelines, and hands-on support.</p>
         <p>We&rsquo;re based in Seattle and work with clients across the United States &mdash; mostly remote, with on-site audits and management reviews when they matter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY ROOTS -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2" style="gap: 64px;">
+      <div>
+        <span class="eyebrow">Company roots</span>
+        <h2>Founded in quality. Expanded for today&rsquo;s compliance needs.</h2>
+      </div>
+      <div>
+        <p>Norma Via Group launched in 2025 as the next chapter of QExcellence, an ISO and quality consulting practice founded in 2018.</p>
+        <p>The new name reflects a broader focus across quality, environmental, safety, cybersecurity, and compliance programs &mdash; while keeping the same practical, audit-tested approach.</p>
       </div>
     </div>
   </div>
@@ -2376,8 +2398,8 @@ After SNIPPET-HEAD + SNIPPET-HEADER (`{{ROOT}}=""`):
 <section class="section section--surface">
   <div class="container">
     <div class="section-header">
-      <h2>How we work</h2>
-      <p>The three things we ask our clients to expect from us, every engagement.</p>
+      <h2>Built to get you audit-ready faster.</h2>
+      <p>Focused support, proven expertise, and clear expectations from the first conversation.</p>
     </div>
     <div class="grid grid--3">
       <div class="pillar"><div class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Honest scoping</h3><p>If you don&rsquo;t need certification, we&rsquo;ll say so. If your timeline is unrealistic, we&rsquo;ll say that too. The first conversation is always free.</p></div>
@@ -2393,13 +2415,13 @@ After SNIPPET-HEAD + SNIPPET-HEADER (`{{ROOT}}=""`):
     <div class="section-header"><h2>Leadership</h2></div>
     <div class="split-row" style="max-width: 980px; margin: 0 auto;">
       <div class="split-row__image" style="max-width: 360px;">
-        <img src="assets/img/founder.jpg" alt="Oksana Goncharov, Lead Consultant at Normavia Group">
+        <img src="assets/img/founder.jpg" alt="Oksana Goncharov, Lead Consultant at Norma Via Group">
       </div>
       <div>
         <span class="eyebrow">Lead consultant</span>
         <h3>Oksana Goncharov</h3>
         <p class="lede">20 years in quality and manufacturing. 300+ audits conducted. 150+ manufacturers visited across 22 countries.</p>
-        <p>Oksana leads Normavia Group&rsquo;s consulting practice. Her experience spans quality management, lean and six sigma, supplier assessment, customer satisfaction, and manufacturing excellence &mdash; with deep certifications in ISO 9001, internal auditing, and adjacent quality standards.</p>
+        <p>Oksana leads Norma Via Group&rsquo;s consulting practice. Her experience spans quality management, lean and six sigma, supplier assessment, customer satisfaction, and manufacturing excellence &mdash; with deep certifications in ISO 9001, internal auditing, and adjacent quality standards.</p>
       </div>
     </div>
   </div>
@@ -2410,7 +2432,7 @@ After SNIPPET-HEAD + SNIPPET-HEADER (`{{ROOT}}=""`):
   <div class="container">
     <h2>Want to talk?</h2>
     <p>Tell us a bit about your company and the certification you&rsquo;re working toward. The first conversation is free.</p>
-    <a class="btn btn--primary btn-arrow" href="contact.html">Get a consultation</a>
+    <a class="btn btn--primary btn-arrow" href="contact.html">Start Your Audit-Ready Plan Today</a>
   </div>
 </section>
 
@@ -2440,8 +2462,8 @@ git commit -m "feat(about): build About page with story, values, and leadership"
 - Create: `contact.html`
 
 **SNIPPET-HEAD substitutions:**
-- `{{TITLE}}` = `Contact Normavia Group | Seattle ISO &amp; Cybersecurity Consulting`
-- `{{DESCRIPTION}}` = `Get in touch with Normavia Group. Free 30-minute consultation for ISO and cybersecurity certification work. Seattle-based, nationwide service.`
+- `{{TITLE}}` = `Contact Norma Via Group | Seattle ISO &amp; Cybersecurity Consulting`
+- `{{DESCRIPTION}}` = `Get in touch with Norma Via Group. Free 30-minute consultation for ISO and cybersecurity certification work. Seattle-based, nationwide service.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/contact.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/manuf.jpg`
 - `{{ROOT}}` = `` (empty)
@@ -2452,7 +2474,7 @@ git commit -m "feat(about): build About page with story, values, and leadership"
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Normavia Group",
+  "name": "Contact Norma Via Group",
   "url": "https://www.normaviagroup.com/contact.html"
 }
 ```
@@ -2533,13 +2555,13 @@ git commit -m "feat(about): build About page with story, values, and leadership"
         <div>
           <button class="btn btn--primary btn-arrow" type="submit">Send message</button>
         </div>
-        <div class="form__success" role="status">Thanks &mdash; your message is being prepared in your mail client. If nothing opens, email us at <a href="mailto:info@normaviagroup.com">info@normaviagroup.com</a>.</div>
+        <div class="form__success" role="status">Thanks &mdash; your message is being prepared in your mail client. If nothing opens, email us at <a href="mailto:oksana@norma-via.com">oksana@norma-via.com</a>.</div>
       </form>
 
       <!-- CONTACT CARD -->
       <aside class="contact-card">
         <h3>Reach us directly</h3>
-        <p><strong>Email</strong><br><a href="mailto:info@normaviagroup.com">info@normaviagroup.com</a></p>
+        <p><strong>Email</strong><br><a href="mailto:oksana@norma-via.com">oksana@norma-via.com</a></p>
         <p><strong>Phone</strong><br><a href="tel:+14250000000">+1 (425) 000-0000</a></p>
         <p><strong>Office</strong><br>Seattle, WA, USA</p>
         <div class="map-frame">
@@ -2762,5 +2784,3 @@ Expected: tidy repo with focused commits per task. Ready to push to a remote whe
 ## Execution handoff
 
 Plan complete and saved to `docs/superpowers/plans/2026-04-30-normavia-website.md`.
-
-

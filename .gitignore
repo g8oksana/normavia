@@ -9,3 +9,7 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Azure Functions local state and dependencies
+api/local.settings.json
+api/node_modules/

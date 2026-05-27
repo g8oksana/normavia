@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "M365_TENANT_ID": "your-tenant-id",
+    "M365_CLIENT_ID": "your-app-registration-client-id",
+    "M365_CLIENT_SECRET": "your-client-secret",
+    "CONTACT_FROM_EMAIL": "oksana@norma-via.com",
+    "CONTACT_TO_EMAIL": "oksana@norma-via.com"
+  }
+}
