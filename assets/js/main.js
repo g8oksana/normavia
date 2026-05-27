@@ -1,6 +1,11 @@
 (function () {
   "use strict";
 
+  if (window.location.protocol === "http:" && /(^|\.)norma-via\.com$/i.test(window.location.hostname)) {
+    window.location.replace("https://" + window.location.host + window.location.pathname + window.location.search + window.location.hash);
+    return;
+  }
+
   // ---------- MOBILE NAV TOGGLE ----------
   function initNavToggle() {
     var toggle = document.querySelector(".site-nav__toggle");
