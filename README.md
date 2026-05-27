@@ -57,7 +57,7 @@ secret values:
 - `M365_CLIENT_SECRET`
 - `CONTACT_FROM_EMAIL=oksana@norma-via.com`
 - `CONTACT_TO_EMAIL=oksana@norma-via.com`
-- `CONTACT_ALLOWED_ORIGINS=https://norma-via.com,https://www.norma-via.com,https://g8oksana.github.io,https://lemon-field-0e2e1601e.7.azurestaticapps.net`
+- `CONTACT_ALLOWED_ORIGINS=https://norma-via.com,https://norma-via.com,https://g8oksana.github.io,https://lemon-field-0e2e1601e.7.azurestaticapps.net`
 
 The Microsoft Entra app registration must have Microsoft Graph application
 permission `Mail.Send` with admin consent. The API sends mail from

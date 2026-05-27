@@ -57,7 +57,7 @@ framework. Any modern web host (or a literal folder share) can serve it.
 
 **Hero sub:**
 > We guide quality and cybersecurity teams through ISO, CMMC, AS9100, and
-> more. End-to-end, on time, on the first audit — with compliance that supports business growth.
+> more. End-to-end, with a practical path designed to keep certification on track — and compliance that supports business growth.
 
 **Primary CTA label:** "Start Your Audit-Ready Plan Today"
 

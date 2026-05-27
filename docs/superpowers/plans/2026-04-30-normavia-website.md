@@ -1237,9 +1237,9 @@ Replace `{{TITLE}}`, `{{DESCRIPTION}}`, `{{CANONICAL}}`, `{{OG_IMAGE_RELATIVE_PA
   "name": "Norma Via Group",
   "alternateName": "QExcellence",
   "description": "ISO certification and cybersecurity compliance consulting for quality and regulated industries.",
-  "url": "https://www.norma-via.com/",
-  "logo": "https://www.norma-via.com/assets/img/logo.svg",
-  "image": "https://www.norma-via.com/assets/img/manuf.jpg",
+  "url": "https://norma-via.com/",
+  "logo": "https://norma-via.com/assets/img/logo.svg",
+  "image": "https://norma-via.com/assets/img/manuf.jpg",
   "telephone": "+1-425-381-0191",
   "email": "oksana@norma-via.com",
   "foundingDate": "2025",
@@ -1376,7 +1376,7 @@ Use SNIPPET-HEADER with `{{ROOT}}=""`.
   <div class="container hero__inner">
     <span class="eyebrow" style="color: #5eead4;">Norma Via Group</span>
     <h1>From gap analysis to certificate &ndash; without the guesswork.</h1>
-    <p class="lede">We guide quality, environmental, safety, and cybersecurity teams through ISO, CMMC, and more. End-to-end, on time, on the first audit &mdash; with compliance that supports business growth.</p>
+    <p class="lede">We guide quality, environmental, safety, and cybersecurity teams through ISO, CMMC, and more. End-to-end, with a practical path designed to keep certification on track &mdash; and compliance that supports business growth.</p>
     <div class="hero__ctas">
       <a class="btn btn--primary btn-arrow" href="contact.html">Start Your Audit-Ready Plan Today</a>
       <a class="btn btn--ghost" href="#services">View our services</a>
@@ -2121,7 +2121,7 @@ git commit -m "feat(services): build ISO 27001 service page (CSS pattern hero, n
 
 **SNIPPET-HEAD substitutions:**
 - `{{TITLE}}` = `AS9100 Aerospace Quality Certification | Norma Via Group`
-- `{{DESCRIPTION}}` = `AS9100 Rev D consulting for aerospace suppliers. Build a quality system that primes accept and your auditor approves. Seattle-based.`
+- `{{DESCRIPTION}}` = `AS9100 Rev D consulting for aerospace suppliers. Build a quality system that aerospace primes accept and your auditor approves. Seattle-based.`
 - `{{CANONICAL}}` = `https://www.normaviagroup.com/services/as9100.html`
 - `{{OG_IMAGE_RELATIVE_PATH}}` = `assets/img/mfg_check.jpg`
 - `{{ROOT}}` = `../`
@@ -2616,15 +2616,15 @@ Sitemap: https://www.normaviagroup.com/sitemap.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.normaviagroup.com/</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.normaviagroup.com/about.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.normaviagroup.com/contact.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.normaviagroup.com/services/iso-9001.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.normaviagroup.com/services/cmmc-nist-800-171.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.normaviagroup.com/services/iso-27001.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.normaviagroup.com/services/as9100.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.normaviagroup.com/services/gmp-iso-13485.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.normaviagroup.com/services/internal-auditing.html</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.normaviagroup.com/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.normaviagroup.com/about.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.normaviagroup.com/contact.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.normaviagroup.com/services/iso-9001.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.normaviagroup.com/services/cmmc-nist-800-171.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.normaviagroup.com/services/iso-27001.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.normaviagroup.com/services/as9100.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.normaviagroup.com/services/gmp-iso-13485.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.normaviagroup.com/services/internal-auditing.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
 ```
 

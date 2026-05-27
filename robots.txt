@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.norma-via.com/sitemap.xml
+Sitemap: https://norma-via.com/sitemap.xml
