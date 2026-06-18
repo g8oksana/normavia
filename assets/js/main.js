@@ -13,6 +13,17 @@
     y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
   })(window, document, "clarity", "script", "x8kkhyarkw");
 
+  // ---------- GOOGLE ANALYTICS (GA4) ----------
+  (function (id) {
+    var s = document.createElement("script");
+    s.async = 1; s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", id);
+  })("G-PE77H6YCF6");
+
   // ---------- MOBILE NAV TOGGLE ----------
   function initNavToggle() {
     var toggle = document.querySelector(".site-nav__toggle");
