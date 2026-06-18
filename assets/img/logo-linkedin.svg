@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" role="img" aria-label="NormaVia Group">
+  <!-- White background -->
+  <rect width="300" height="300" fill="#ffffff"/>
+
+  <!-- N icon — centered horizontally, upper area -->
+  <g fill="none" stroke="#06b6d4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 175 L126 125 L174 175 L174 125" />
+  </g>
+
+  <!-- NORMA VIA text -->
+  <text x="150" y="215" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700" fill="#0f172a" letter-spacing="0.06em" text-anchor="middle">NORMA VIA</text>
+
+  <!-- GROUP subtext -->
+  <text x="150" y="238" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#64748b" letter-spacing="0.28em" text-anchor="middle">GROUP</text>
+</svg>

@@ -177,6 +177,25 @@ p { margin: 0 0 var(--space-4); }
 .section-header p { color: var(--color-text-muted); }
 .section--dark .section-header p { color: var(--color-text-muted-on-dark); }
 
+.service-group { margin-bottom: var(--space-16); }
+.service-group:last-child { margin-bottom: 0; }
+.service-group__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-accent);
+}
+.service-group__header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 /* ---------- BUTTONS ---------- */
 .btn {
   display: inline-flex;

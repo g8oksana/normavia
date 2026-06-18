@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Norma Via Group — Partner One-Pager</title>
+<!-- v2: removed client voices, 2-column layout -->
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #1e293b;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page { size: Letter portrait; margin: 0; }
+  @media print {
+    html, body { width: 8.5in; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none !important; }
+    a { text-decoration: underline; color: #06b6d4 !important; }
+    .footer-band .cta { text-decoration: none !important; color: #0f172a !important; }
+  }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #0f172a;
+    color: #fff;
+    padding: 18px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+  .header__wordmark {
+    font-size: 22pt;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #fff;
+    line-height: 1;
+  }
+  .header__wordmark span { color: #06b6d4; }
+  .header__tagline {
+    font-size: 8.5pt;
+    color: #94a3b8;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .header__contact {
+    text-align: right;
+    font-size: 9.5pt;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+  .header__contact strong { display: block; color: #fff; font-size: 10.5pt; }
+  .header__contact a { color: #06b6d4; }
+
+  /* ── HERO BAND ── */
+  .hero-band {
+    background: #06b6d4;
+    padding: 18px 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-shrink: 0;
+  }
+  .hero-band__stat { text-align: center; min-width: 80px; }
+  .hero-band__stat .num { font-size: 26pt; font-weight: 800; color: #0f172a; line-height: 1; }
+  .hero-band__stat .lbl { font-size: 9pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.2; margin-top: 3px; }
+  .hero-band__divider { width: 1px; height: 42px; background: rgba(15,23,42,0.25); flex-shrink: 0; }
+  .hero-band__statement { flex: 1; font-size: 14pt; font-weight: 700; color: #0f172a; line-height: 1.3; }
+  .hero-band__statement span { font-weight: 400; font-size: 11.5pt; display: block; margin-top: 5px; color: #1e293b; }
+
+  .hero-band--compact { padding: 7px 36px; gap: 20px; }
+  .hero-band--compact .hero-band__stat { min-width: 60px; }
+  .hero-band--compact .hero-band__stat .num { font-size: 16pt; }
+  .hero-band--compact .hero-band__stat .lbl { font-size: 7.5pt; margin-top: 1px; }
+  .hero-band--compact .hero-band__divider { height: 28px; }
+
+  /* ── MAIN 2-COLUMN GRID ── */
+  .main-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .col {
+    padding: 14px 22px;
+  }
+  .col:first-child { border-right: 1px solid #e2e8f0; }
+  .col:last-child  { background: #f8fafc; }
+
+  .col-title {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #06b6d4;
+    background: #0f172a;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+
+  /* ── Col 1: Who We Are ── */
+  .col--who h2 { font-size: 13.5pt; font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 5px; }
+  .col--who p  { font-size: 10.5pt; color: #475569; margin-bottom: 4px; line-height: 1.4; }
+
+  .diff-item { display: flex; gap: 9px; margin-bottom: 9px; align-items: flex-start; }
+  .diff-icon {
+    width: 22px; height: 22px;
+    background: #0f172a; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+  }
+  .diff-icon svg { width: 12px; height: 12px; stroke: #06b6d4; fill: none; stroke-width: 2.5; }
+  .diff-item h4 { font-size: 10.5pt; font-weight: 700; color: #0f172a; margin-bottom: 1px; }
+  .diff-item p  { font-size: 9.5pt; color: #64748b; line-height: 1.4; }
+
+  .who-serve { margin-top: 14px; }
+  .who-serve h4 {
+    font-size: 8.5pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 6px;
+    border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;
+  }
+  .industry-list { list-style: none; columns: 2; gap: 8px; }
+  .industry-list li {
+    font-size: 9.5pt; color: #334155; padding-left: 11px;
+    position: relative; margin-bottom: 3px; break-inside: avoid;
+  }
+  .industry-list li::before { content: '▸'; color: #06b6d4; position: absolute; left: 0; font-size: 7pt; top: 2px; }
+
+  /* ── Col 2: Services ── */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .svc-card {
+    background: #fff;
+    border-top: 3px solid #06b6d4;
+    border-radius: 4px;
+    padding: 6px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .svc-card__title {
+    font-size: 9.5pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #0f172a; margin-bottom: 4px;
+  }
+  .svc-card__list { list-style: none; }
+  .svc-card__list li {
+    font-size: 10pt; color: #475569; padding: 1px 0;
+    border-bottom: 1px solid #f1f5f9; line-height: 1.3;
+  }
+  .svc-card__list li:last-child { border-bottom: none; }
+
+  .how-we-work {
+    margin-top: 7px;
+    padding: 14px 12px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+  }
+  .how-we-work__label {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 10px;
+  }
+  .steps { display: flex; }
+  .step { flex: 1; text-align: center; padding: 6px 6px; border-right: 1px solid #e2e8f0; }
+  .step:last-child { border-right: none; }
+  .step .n { font-weight: 800; color: #06b6d4; font-size: 18pt; line-height: 1; }
+  .step .t { font-weight: 700; color: #0f172a; font-size: 10.5pt; }
+  .step .d { color: #64748b; font-size: 9pt; }
+
+  /* ── FOOTER ── */
+  .footer-band {
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 28px 36px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .footer-band a { color: #06b6d4; text-decoration: none; white-space: nowrap; }
+  .footer-band__contacts {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-size: 12pt;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  .footer-band__contacts strong { font-size: 10pt; }
+  .footer-band .cta {
+    background: #06b6d4; color: #0f172a; font-weight: 700;
+    font-size: 11.5pt; padding: 12px 32px; border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .print-btn {
+    position: fixed; top: 16px; right: 16px;
+    background: #0f172a; color: #fff; border: none;
+    padding: 10px 20px; border-radius: 6px; font-size: 13px;
+    cursor: pointer; z-index: 999; font-family: inherit;
+  }
+  .print-btn:hover { background: #1e293b; }
+</style>
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x8kkhyarkw");
+</script>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">💾 Save as PDF (use Chrome → Save as PDF)</button>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <img src="assets/img/logo-dark-bg.svg" alt="Norma Via Group" height="52" style="display:block;">
+      <div class="header__tagline">ISO &amp; Compliance Consulting · Seattle, WA · Nationwide</div>
+    </div>
+    <div class="header__contact">
+      <a href="https://www.norma-via.com">www.norma-via.com</a><br>
+      <a href="tel:+14253810191">+1 (425) 381-0191</a>
+    </div>
+  </header>
+
+  <!-- HERO BAND -->
+  <div class="hero-band">
+    <div class="hero-band__statement" style="flex:1;">
+      From gap analysis to certificate — without the guesswork.
+      <span>We help manufacturers, medical device companies, defense contractors, and tech firms build audit-ready systems that pass the first time and support business growth.</span>
+    </div>
+  </div>
+
+  <!-- MAIN 2-COLUMN GRID -->
+  <div class="main-grid">
+
+    <!-- COL 1: WHO WE ARE -->
+    <div class="col col--who">
+      <div class="col-title">Who We Are</div>
+
+      <h2>Experienced guidance.<br>Practical results.</h2>
+      <p style="margin-top: 5px;">Norma Via Group is a Seattle-based ISO and compliance consulting firm serving clients across the United States.</p>
+      <p>We bring a triple perspective to every engagement: <strong>manufacturer, auditor, and consultant</strong> — so clients know what to build, what auditors expect, and how to pass with confidence.</p>
+
+      <div style="margin-top: 7px;">
+        <div class="diff-item">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h4>Audit-ready systems</h4>
+            <p>Documented, lived-in management systems — not paperwork built the night before the audit.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 12h7m4 0h7M12 3v7m0 4v7"/></svg>
+          </div>
+          <div>
+            <h4>ISO + Cybersecurity, one partner</h4>
+            <p>Management systems and cyber frameworks under one roof — no hand-offs between specialists.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg>
+          </div>
+          <div>
+            <h4>Long-term partnership</h4>
+            <p>First conversation always free. Most clients work with us across multiple recertification cycles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="who-serve">
+        <h4>Who We Serve</h4>
+        <ul class="industry-list">
+          <li>Manufacturers &amp; parts makers</li>
+          <li>Aerospace companies</li>
+          <li>Medical device &amp; life sciences</li>
+          <li>DoD contractors</li>
+          <li>SaaS &amp; cloud providers</li>
+          <li>Electronics &amp; hardware OEMs</li>
+          <li>Regulated supply chains</li>
+          <li>AI governance</li>
+          <li>IT service providers</li>
+        </ul>
+      </div>
+    </div>
+    <!-- COL 2: SERVICES -->
+    <div class="col col--services">
+      <div class="col-title">Services</div>
+
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-card__title">Quality &amp; Operations</div>
+          <ul class="svc-card__list">
+            <li>ISO 9001 Quality Management</li>
+            <li>ISO 14001 Environmental</li>
+            <li>ISO 45001 Health &amp; Safety</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__title">Medical &amp; FDA</div>
+          <ul class="svc-card__list">
+            <li>GMP / ISO 13485 Medical Devices</li>
+            <li>MDSAP / HIPAA</li>
+            <li>RCA / CAPA for FDA</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__title">Cybersecurity &amp; Tech</div>
+          <ul class="svc-card__list">
+            <li>ISO 27001 InfoSec</li>
+            <li>CMMC / NIST 800-171</li>
+            <li>SOC 2</li>
+            <li>ISO 42001 AI Governance</li>
+            <li>ISO 20000-1 IT Service Mgmt</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__title">Aerospace</div>
+          <ul class="svc-card__list">
+            <li>AS9100 Aerospace QMS</li>
+            <li>AS9110 MRO</li>
+            <li>AS9120 Distributor</li>
+            <li>NADCAP</li>
+            <li>FAA Regulatory Support</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__title">Supply Chain</div>
+          <ul class="svc-card__list">
+            <li>Supplier Assessment &amp; Qualification</li>
+            <li>2nd Party Audits</li>
+            <li>Supplier Escalations</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__title">Audit &amp; Training</div>
+          <ul class="svc-card__list">
+            <li>Gap Analysis</li>
+            <li>Internal Auditing</li>
+            <li>Training Programs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="how-we-work">
+        <div class="how-we-work__label">How We Work — Gap-Find · Build · Audit · Certify</div>
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div class="t">Gap Analysis</div><div class="d">Assess &amp; prioritize</div></div>
+          <div class="step"><div class="n">2</div><div class="t">Build</div><div class="d">System &amp; documentation</div></div>
+          <div class="step"><div class="n">3</div><div class="t">Audit Ready</div><div class="d">Internal audit &amp; review</div></div>
+          <div class="step"><div class="n">4</div><div class="t">Certify</div><div class="d">Pass on the first attempt</div></div>
+        </div>
+      </div>
+
+      <div style="margin-top:7px; padding:14px 12px; background:#fff; border:1px solid #e2e8f0; border-radius:6px; font-size:10.5pt; font-weight:700; color:#0f172a; text-align:center;">
+        <span style="color:#06b6d4; font-size:18pt; font-weight:800; vertical-align:middle; margin-right:8px;">5</span>Maintain and continuously improve compliant system
+      </div>
+
+    </div>
+
+  </div><!-- /main-grid -->
+
+  <!-- STATS BAND -->
+  <div class="hero-band hero-band--compact" style="justify-content:center;">
+    <div class="hero-band__stat">
+      <div class="num">300+</div>
+      <div class="lbl">Audits<br>Conducted</div>
+    </div>
+    <div class="hero-band__divider"></div>
+    <div class="hero-band__stat">
+      <div class="num">22</div>
+      <div class="lbl">Countries<br>of Experience</div>
+    </div>
+    <div class="hero-band__divider"></div>
+    <div class="hero-band__stat">
+      <div class="num">20+</div>
+      <div class="lbl">Years in<br>Quality &amp; Audit</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-band">
+    <div class="footer-band__contacts">
+      <span>📧 <a href="mailto:oksana@norma-via.com">oksana@norma-via.com</a></span>
+      <span>📞 <a href="tel:+14253810191">+1 (425) 381-0191</a></span>
+      <span>🌐 <a href="https://www.norma-via.com">www.norma-via.com</a></span>
+    </div>
+    <a class="cta" href="https://www.norma-via.com/contact.html">Book a free consultation</a>
+  </footer>
+
+</div><!-- /page -->
+
+</body>
+</html>
